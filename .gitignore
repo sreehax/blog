@@ -1,0 +1,12 @@
+# pnpm
+node_modules
+
+# next
+.next
+out
+
+# vercel
+.vercel
+
+# macOS
+.DS_Store

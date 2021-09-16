@@ -1,0 +1,49 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "Sreehari's blog",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "export": "next export"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sreehax/blog.git"
+  },
+  "keywords": [
+    "ssreedev"
+  ],
+  "author": "Sreehari Sreedev <sreeharisreedev1@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sreehax/blog/issues"
+  },
+  "homepage": "https://github.com/sreehax/blog#readme",
+  "dependencies": {
+    "@fontsource/jetbrains-mono": "^4.5.0",
+    "@fontsource/rubik": "^4.5.0",
+    "@mapbox/rehype-prism": "^0.7.0",
+    "@mdx-js/loader": "^1.6.22",
+    "gray-matter": "^4.0.3",
+    "next": "^11.1.2",
+    "normalize.css": "^8.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sharp": "^0.29.1"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.21",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^11.1.2",
+    "sass": "^1.41.0",
+    "typescript": "^4.4.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "trim@<0.0.3": ">=0.0.3"
+    }
+  }
+}

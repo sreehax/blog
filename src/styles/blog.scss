@@ -1,0 +1,207 @@
+@use "sass:math";
+@import "_consts";
+@import "_prism";
+
+html {
+    line-height: $lineHeight_normal;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: $sansFont;
+    font-size: $fontSize_1;
+    color: var(--color-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $headingFont;
+    margin-top: $spacing_12;
+    margin-bottom: $spacing_6;
+    line-height: $lineHeight_tight;
+    letter-spacing: -0.025em;
+
+    > a {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+h1 {
+    font-weight: $fontWeight_black;
+    font-size: $fontSize_6;
+    color: var(--color-heading-black);
+}
+
+h2 { font-size: $fontSize_5; }
+h3 { font-size: $fontSize_4; }
+h4 { font-size: $fontSize_3; }
+h5 { font-size: $fontSize_2; }
+h6 { font-size: $fontSize_1; }
+
+h2, h3, h4, h5, h6 {
+    font-weight: $fontWeight_bold;
+    color: var(--color-heading);
+}
+
+p {
+    line-height: $lineHeight_relaxed;
+    --baseline-multiplier: 0.179;
+    --x-height-multiplier: 0.35;
+    margin: $spacing_0 $spacing_0 $spacing_8 $spacing_0;
+    padding: $spacing_0;
+}
+
+a {
+    color: var(--color-primary);
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+
+.main-heading {
+    font-size: $fontSize_7;
+    margin: 0;
+}
+
+.header-link-home {
+    font-weight: $fontWeight_bold;
+    font-family: $headingFont;
+    text-decoration: none;
+    font-size: $fontSize_2;
+}
+
+.global-wrapper {
+    margin: $spacing_0 auto;
+    max-width: 42rem;
+    padding: $spacing_10 $spacing_5;
+}
+
+.global-wrapper[data-is-root-path="true"] .bio {
+    margin-bottom: $spacing_20; 
+}
+
+.global-header {
+    margin-bottom: $spacing_12;
+}
+
+.post-list-item {
+    margin-bottom: $spacing_8;
+    margin-top: $spacing_8;
+    p {
+        margin-bottom: $spacing_0;
+    }
+    h2 {
+        font-size: $fontSize_4;
+        color: var(--color-primary);
+        margin-bottom: $spacing_2;
+        margin-top: $spacing_0;
+    }
+    header {
+        margin-bottom: $spacing_4;
+    }
+}
+
+ul, ol {
+    margin-left: $spacing_0;
+    margin-right: $spacing_0;
+    padding: $spacing_0;
+    margin-bottom: $spacing_8;
+    list-style-position: outside;
+    list-style-image: none;
+    li {
+        padding-left: $spacing_0;
+        margin-bottom: math.div($spacing-8, 2);
+    }
+}
+
+li {
+    > p {
+        margin-bottom: math.div($spacing-8, 2);
+    }
+    *:last-child {
+        margin-bottom: $spacing_0
+    }
+    > ul {
+        margin-left: $spacing_8;
+        margin-top: math.div($spacing-8, 2);
+    }
+}
+
+blockquote {
+    color: var(--color-text-light);
+    margin-left: -1 * $spacing_6;
+    margin-right: $spacing_8;
+    padding: $spacing_0 $spacing_0 $spacing_0 $spacing_6;
+    border-left: $spacing_1 solid var(--color-primary);
+    font-size: $fontSize_2;
+    font-style: italic;
+    margin-bottom: $spacing_8;
+    > :last-child {
+        margin-bottom: $spacing_8;
+    }
+    > ul, > ol {
+        list-style-position: inside;
+    }
+}
+
+table {
+    width: 100%;
+    margin-bottom: $spacing_8;
+    border-collapse: collapse;
+    border-spacing: 0.25rem;
+    thead tr th {
+        border-bottom: 1px solid var(--color-accent);
+    }
+}
+
+footer {
+    padding: $spacing_6 $spacing_0;
+}
+
+hr {
+    background: var(--color-accent);
+    height: 1px;
+    border: 0;
+}
+
+.bio {
+    display: flex;
+    margin-bottom: $spacing_16;
+    p {
+        margin-bottom: $spacing_0;
+    }
+    .bio-avatar {
+        margin-right: $spacing_4;
+        margin-bottom: $spacing_0;
+        min-width: 50px;
+        border-radius: 100%;
+    }
+}
+
+.blog-post {
+    header {
+        h1 {
+            margin: $spacing_0 $spacing_0 $spacing_4 $spacing_0;
+        }
+        p {
+            font-size: $fontSize_2;
+            font-family: $headingFont;
+        }
+    }
+    &-nav ul {
+        margin: $spacing_0;
+    }
+}
+
+@media (max-width: 42rem) {
+    .site-title {
+        font-weight: normal;
+    }
+    ul, ol {
+        list-style-position: inside;
+    }
+}
