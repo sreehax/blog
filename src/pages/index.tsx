@@ -28,10 +28,7 @@ const Index = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
                         itemType="http://schema.org/Article">
                             <header>
                                 <h2>
-                                    <Link href={{
-                                        pathname: "/posts/[id]",
-                                        query: { id: post.id}
-                                    }}>
+                                    <Link href={`/posts/${encodeURIComponent(post.id)}`}>
                                         <a itemProp="headline">{post.title}</a>
                                     </Link>
                                 </h2>
