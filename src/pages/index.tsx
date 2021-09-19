@@ -1,4 +1,3 @@
-import Layout from "~/components/layout"
 import Bio from "~/components/bio"
 import SEO from "~/components/seo"
 import { getPosts } from "~/utils/posts"
@@ -6,18 +5,19 @@ import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import Link from 'next/link'
 import "~/utils/date"
 import type { PostMetadata } from "~/types"
+import { Fragment } from "react"
 
 const Index = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
     if (posts.length == 0) {
         return (
-            <Layout>
+            <Fragment>
                 <SEO title="All posts" />
                 <p>No blog posts found</p>
-            </Layout>
+            </Fragment>
         )
     }
     return (
-        <Layout>
+        <Fragment>
             <SEO title="All posts" />
             <Bio />
             <ol style={{ listStyle: "none"}}>
@@ -41,7 +41,7 @@ const Index = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
                     </li>
                 })}
             </ol>
-        </Layout>
+        </Fragment>
     )
 }
 

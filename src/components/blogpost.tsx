@@ -1,16 +1,16 @@
-import Layout from "./layout"
 import SEO from "./seo"
 import Footer from "./footer"
 import "~/utils/date"
-import { ReactComponent, PostMetadataPart } from "~/types"
+import { Fragment } from "react"
+import type { ReactComponent, PostMetadataPart } from "~/types"
 
 interface BlogPostComponent extends ReactComponent {
     fm: PostMetadataPart
 }
 
-const BlogPost = ({ children, fm}: BlogPostComponent) => {
+const BlogPost = ({ children, fm }: BlogPostComponent) => {
     return (
-        <Layout>
+        <Fragment>
             <SEO
                 title={fm.title}
                 description={fm.description}
@@ -32,7 +32,7 @@ const BlogPost = ({ children, fm}: BlogPostComponent) => {
                     <Footer />
                 </footer>
             </article>
-        </Layout>
+        </Fragment>
     )
 }
 
